@@ -7,12 +7,11 @@ class CatProduct extends Product
     protected $sterilizzato;
     protected $razza;
 
-    function __construct($_Sterilizzato, $_razza)
+    function __construct($_Sterilizzato)
     {
-        parent::__construct('gatti');
+        parent::__construct('gatti', true);
 
         $this->sterilizzato = $_Sterilizzato;
-        $this->razza = $_razza;
     }
 
     //get 
@@ -31,6 +30,9 @@ class CatProduct extends Product
 
     public function setSterilizzato($newSterilizzato)
     {
+        if (is_bool($newSterilizzato)) {
+            $newSterilizzato = $newSterilizzato ? 'Yes' : 'No';
+        }
         $this->sterilizzato = $newSterilizzato;
     }
 

@@ -9,7 +9,7 @@ class DogProduct extends Product
 
     function __construct($_taglia, $_razza)
     {
-        parent::__construct('cani');
+        parent::__construct('cani', true);
 
         $this->taglia = $_taglia;
         $this->razza = $_razza;
