@@ -1,37 +1,23 @@
 <?php
 
+include_once __DIR__ . '/categorie.php';
+include_once __DIR__ . '/articolo.php';
+
 class Product
 {
-    protected $categoria;
-    protected $disponibilita = true;
+    public $nome;
+    public $categoria;
+    public $articolo;
 
-    function __construct($_categoria, $_disponibilita)
+    function __construct($_nome, Category $specie, Articolo $articolo)
     {
-        $this->categoria = $_categoria;
-        $this->disponibilita = $_disponibilita;
+        $this->nome = $_nome;
+        $this->categoria = $specie;
+        $this->articolo = $articolo;
     }
 
-    public function getCategoria()
+    public function getNome()
     {
-        return $this->categoria;
-    }
-
-    public function getDisponibilita()
-    {
-        return $this->disponibilita;
-    }
-
-    public function setCategoria($newCategoria)
-    {
-
-        $this->categoria = $newCategoria;
-    }
-
-    public function setDisponibilita($newDisponibilita)
-    {
-        if (is_bool($newDisponibilita)) {
-            $newDisponibilita = $newDisponibilita ? 'Yes' : 'No';
-        }
-        $this->disponibilita = $newDisponibilita;
+        return $this->nome;
     }
 }

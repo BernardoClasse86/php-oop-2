@@ -1,293 +1,154 @@
 <?php
 
-include __DIR__ . '/models/products.php';
-include __DIR__ . '/models/dog.php';
-include __DIR__ . '/models/dogs/cibo.php';
-include __DIR__ . '/models/dogs/giochi.php';
-include __DIR__ . '/models/dogs/cuccia.php';
-include __DIR__ . '/models/cat.php';
-include __DIR__ . '/models/cats/cibo.php';
-include __DIR__ . '/models/cats/giochi.php';
-include __DIR__ . '/models/cats/cuccia.php';
+include_once __DIR__ . '/models/products.php';
 
-// include ends
+// prodotti cibo
 
-//DOG PRODUCTS
+$prodottoCibo1 = new Product('Paté morbido di pollo', new Category('Gatti', '<i class="fa-solid fa-cat"></i>'), new Articolo('Cibo', './img/umido-gatto-pollo.png', '2.50€'));
+$prodottoCibo2 = new Product('Crocchette di manzo', new Category('Gatti', '<i class="fa-solid fa-cat"></i>'), new Articolo('Cibo', './img/crocchette-gatto-manzo.jpg', '3.30€'));
+$prodottoCibo3 = new Product('Crocchette Bio di pollo', new Category('Gatti', '<i class="fa-solid fa-cat"></i>'), new Articolo('Cibo', './img/crocchette-gatto-bio-pollo.png', '5.75€'));
+$prodottoCibo4 = new Product('Crocchette di agnello', new Category('Cani', '<i class="fa-solid fa-dog"></i>'), new Articolo('Cibo', './img/crocchette-cane-agnello.png', '4.00€'));
+$prodottoCibo5 = new Product('Crocchette di pollo', new Category('Cani', '<i class="fa-solid fa-dog"></i>'), new Articolo('Cibo', './img/crocchette-cane-pollo.png', '3.00€'));
+$prodottoCibo6 = new Product('Crocchette di salmone', new Category('Cani', '<i class="fa-solid fa-dog"></i>'), new Articolo('Cibo', './img/crocchette-cane-salmone.png', '4.50€'));
 
-// dog food
+// var_dump($prodottoCibo1);
 
-$dogFood1 = new DogFood('nome', 'descrizione', 'prezzo');
-$dogFood1->setNome('Croccantini');
-$dogFood1->setDesc('Alimento secco per cani');
-$dogFood1->setCategoria('Cani');
-$dogFood1->setPrezzo("7.00");
-$dogFood1->setDisponibilita(true);
-$dogFood1->setTaglia('Piccola');
-$dogFood1->setRazza('Barboncino');
-
-$dogFood2 = new DogFood('nome', 'descrizione', 'prezzo');
-$dogFood2->setNome('Croccantini');
-$dogFood2->setDesc('Alimento secco per cani');
-$dogFood2->setCategoria('Cani');
-$dogFood2->setPrezzo("7.00");
-$dogFood2->setDisponibilita(true);
-$dogFood2->setTaglia('Piccola');
-$dogFood2->setRazza('Barboncino');
-
-$dogFood3 = new DogFood('nome', 'descrizione', 'prezzo');
-$dogFood3->setNome('Croccantini');
-$dogFood3->setDesc('Alimento secco per cani');
-$dogFood3->setCategoria('Cani');
-$dogFood3->setPrezzo("7.00");
-$dogFood3->setDisponibilita(true);
-$dogFood3->setTaglia('Piccola');
-$dogFood3->setRazza('Barboncino');
-
-$dogFood4 = new DogFood('nome', 'descrizione', 'prezzo');
-$dogFood4->setNome('Croccantini');
-$dogFood4->setDesc('Alimento secco per cani');
-$dogFood4->setCategoria('Cani');
-$dogFood4->setPrezzo("7.00");
-$dogFood4->setDisponibilita(true);
-$dogFood4->setTaglia('Piccola');
-$dogFood4->setRazza('Barboncino');
-
-//d /dog food
-
-//d dog toys
-
-$dogToys1 = new DogToys('nome', 'descrizione', 'prezzo');
-$dogToys1->setNome('Osso');
-$dogToys1->setDesc('Osso di gomma sonoro');
-$dogToys1->setCategoria('Cani');
-$dogToys1->setPrezzo("6.00");
-$dogToys1->setDisponibilita(true);
-$dogToys1->setTaglia('Media');
-$dogToys1->setRazza('Border Collie');
-
-$dogToys2 = new DogToys('nome', 'descrizione', 'prezzo');
-$dogToys2->setNome('Osso');
-$dogToys2->setDesc('Osso di gomma sonoro');
-$dogToys2->setCategoria('Cani');
-$dogToys2->setPrezzo("6.00");
-$dogToys2->setDisponibilita(true);
-$dogToys2->setTaglia('Media');
-$dogToys2->setRazza('Border Collie');
-
-$dogToys3 = new DogToys('nome', 'descrizione', 'prezzo');
-$dogToys3->setNome('Osso');
-$dogToys3->setDesc('Osso di gomma sonoro');
-$dogToys3->setCategoria('Cani');
-$dogToys3->setPrezzo("6.00");
-$dogToys3->setDisponibilita(true);
-$dogToys3->setTaglia('Media');
-$dogToys3->setRazza('Border Collie');
-
-$dogToys4 = new DogToys('nome', 'descrizione', 'prezzo');
-$dogToys4->setNome('Osso');
-$dogToys4->setDesc('Osso di gomma sonoro');
-$dogToys4->setCategoria('Cani');
-$dogToys4->setPrezzo("6.00");
-$dogToys4->setDisponibilita(true);
-$dogToys4->setTaglia('Media');
-$dogToys4->setRazza('Border Collie');
-
-//d /dog toys
-
-//d dog house
-
-$dogHouse1 = new DogHouse('nome', 'descrizione', 'prezzo');
-$dogHouse1->setNome('Casetta');
-$dogHouse1->setDesc('Casetta in legno');
-$dogHouse1->setCategoria('Cani');
-$dogHouse1->setPrezzo("45.00");
-$dogHouse1->setDisponibilita(true);
-$dogHouse1->setTaglia('Grande');
-$dogHouse1->setRazza('Certosino');
-
-$dogHouse2 = new DogHouse('nome', 'descrizione', 'prezzo');
-$dogHouse2->setNome('Casetta');
-$dogHouse2->setDesc('Casetta in legno');
-$dogHouse2->setCategoria('Cani');
-$dogHouse2->setPrezzo("45.00");
-$dogHouse2->setDisponibilita(true);
-$dogHouse2->setTaglia('Grande');
-$dogHouse2->setRazza('Certosino');
-
-$dogHouse3 = new DogHouse('nome', 'descrizione', 'prezzo');
-$dogHouse3->setNome('Casetta');
-$dogHouse3->setDesc('Casetta in legno');
-$dogHouse3->setCategoria('Cani');
-$dogHouse3->setPrezzo("45.00");
-$dogHouse3->setDisponibilita(true);
-$dogHouse3->setTaglia('Grande');
-$dogHouse3->setRazza('Certosino');
-
-$dogHouse4 = new DogHouse('nome', 'descrizione', 'prezzo');
-$dogHouse4->setNome('Casetta');
-$dogHouse4->setDesc('Casetta in legno');
-$dogHouse4->setCategoria('Cani');
-$dogHouse4->setPrezzo("45.00");
-$dogHouse4->setDisponibilita(true);
-$dogHouse4->setTaglia('Grande');
-$dogHouse4->setRazza('Certosino');
-
-// /dog house
-
-var_dump($DogFood1, $DogToys1, $DogHouse1);
-// /DOG PRODUCTS
-
-// CAT PRODUCTS
-
-// cat food
-
-$catFood1 = new CatFood('nome', 'descrizione', 'prezzo');
-$catFood1->setNome('Manzo');
-$catFood1->setDesc('Alimento secco per gatti');
-$catFood1->setCategoria('Gatti');
-$catFood1->setPrezzo("3.00");
-$catFood1->setDisponibilita(true);
-$catFood1->setSterilizzato(false);
-$catFood1->setRazza('Persiano');
-
-$catFood2 = new CatFood('nome', 'descrizione', 'prezzo');
-$catFood2->setNome('Manzo');
-$catFood2->setDesc('Alimento secco per gatti');
-$catFood2->setCategoria('Gatti');
-$catFood2->setPrezzo("3.00");
-$catFood2->setDisponibilita(true);
-$catFood2->setSterilizzato(false);
-$catFood2->setRazza('Persiano');
-
-$catFood3 = new CatFood('nome', 'descrizione', 'prezzo');
-$catFood3->setNome('Manzo');
-$catFood3->setDesc('Alimento secco per gatti');
-$catFood3->setCategoria('Gatti');
-$catFood3->setPrezzo("3.00");
-$catFood3->setDisponibilita(true);
-$catFood3->setSterilizzato(false);
-$catFood3->setRazza('Persiano');
-
-$catFood4 = new CatFood('nome', 'descrizione', 'prezzo');
-$catFood4->setNome('Manzo');
-$catFood4->setDesc('Alimento secco per gatti');
-$catFood4->setCategoria('Gatti');
-$catFood4->setPrezzo("3.00");
-$catFood4->setDisponibilita(true);
-$catFood4->setSterilizzato(false);
-$catFood4->setRazza('Persiano');
-
-// /cat food
-
-// cat toys
-
-$catToys1 = new CatToys('nome', 'descrizione', 'prezzo');
-$catToys1->setNome('Gomitolo');
-$catToys1->setDesc('Gomitolo di lana');
-$catToys1->setCategoria('Gatti');
-$catToys1->setPrezzo("8.00");
-$catToys1->setDisponibilita(true);
-$catToys1->setSterilizzato(true);
-$catToys1->setRazza('Europeo');
-
-$catToys2 = new CatToys('nome', 'descrizione', 'prezzo');
-$catToys2->setNome('Gomitolo');
-$catToys2->setDesc('Gomitolo di lana');
-$catToys2->setCategoria('Gatti');
-$catToys2->setPrezzo("8.00");
-$catToys2->setDisponibilita(true);
-$catToys2->setSterilizzato(true);
-$catToys2->setRazza('Europeo');
-
-$catToys3 = new CatToys('nome', 'descrizione', 'prezzo');
-$catToys3->setNome('Gomitolo');
-$catToys3->setDesc('Gomitolo di lana');
-$catToys3->setCategoria('Gatti');
-$catToys3->setPrezzo("8.00");
-$catToys3->setDisponibilita(true);
-$catToys3->setSterilizzato(true);
-$catToys3->setRazza('Europeo');
-
-$catToys4 = new CatToys('nome', 'descrizione', 'prezzo');
-$catToys4->setNome('Gomitolo');
-$catToys4->setDesc('Gomitolo di lana');
-$catToys4->setCategoria('Gatti');
-$catToys4->setPrezzo("8.00");
-$catToys4->setDisponibilita(true);
-$catToys4->setSterilizzato(true);
-$catToys4->setRazza('Europeo');
-
-// /cat toys
-
-// cat house
-
-$catHouse1 = new CatHouse('nome', 'descrizione', 'prezzo');
-$catHouse1->setNome('Cuscino');
-$catHouse1->setDesc('Cuscino Soffice');
-$catHouse1->setCategoria('Gatti');
-$catHouse1->setPrezzo("15.00");
-$catHouse1->setDisponibilita(true);
-$catHouse1->setSterilizzato(false);
-$catHouse1->setRazza('Certosino');
-
-$catHouse2 = new CatHouse('nome', 'descrizione', 'prezzo');
-$catHouse2->setNome('Cuscino');
-$catHouse2->setDesc('Cuscino Soffice');
-$catHouse2->setCategoria('Gatti');
-$catHouse2->setPrezzo("15.00");
-$catHouse2->setDisponibilita(true);
-$catHouse2->setSterilizzato(false);
-$catHouse2->setRazza('Certosino');
-
-$catHouse3 = new CatHouse('nome', 'descrizione', 'prezzo');
-$catHouse3->setNome('Cuscino');
-$catHouse3->setDesc('Cuscino Soffice');
-$catHouse3->setCategoria('Gatti');
-$catHouse3->setPrezzo("15.00");
-$catHouse3->setDisponibilita(true);
-$catHouse3->setSterilizzato(false);
-$catHouse3->setRazza('Certosino');
-
-$catHouse4 = new CatHouse('nome', 'descrizione', 'prezzo');
-$catHouse4->setNome('Cuscino');
-$catHouse4->setDesc('Cuscino Soffice');
-$catHouse4->setCategoria('Gatti');
-$catHouse4->setPrezzo("15.00");
-$catHouse4->setDisponibilita(true);
-$catHouse4->setSterilizzato(false);
-$catHouse4->setRazza('Certosino');
-
-// /cat house
-
-var_dump($CatFood1, $CatToys1, $CatHouse1);
-// /CAT PRODUCTS
-
-$dogProducts = [
-    $DogFood1,
-    $DogFood2,
-    $DogFood3,
-    $DogFood4,
-    $DogToys1,
-    $DogToys2,
-    $DogToys3,
-    $DogToys4,
-    $DogHouse1,
-    $DogHouse2,
-    $DogHouse3,
-    $DogHouse4,
+$prodottiCibo = [
+    $prodottoCibo1,
+    $prodottoCibo2,
+    $prodottoCibo3,
+    $prodottoCibo4,
+    $prodottoCibo5,
+    $prodottoCibo6,
 ];
 
-$catProducts = [
-    $catFood1,
-    $catFood2,
-    $catFood3,
-    $catFood4,
-    $catToys1,
-    $catToys2,
-    $catToys3,
-    $catToys4,
-    $catHouse1,
-    $catHouse2,
-    $catHouse3,
-    $catHouse4
+// prodotti gioco
+
+$prodottoGioco1 = new Product('Tiragraffi', new Category('Gatti', '<i class="fa-solid fa-cat"></i>'), new Articolo('Gioco', './img/tiragraffi-gatto.jpg', '56.50€'));
+$prodottoGioco2 = new Product('Gomitolo', new Category('Gatti', '<i class="fa-solid fa-cat"></i>'), new Articolo('Gioco', './img/gomitolo-gatto.jpg', '4.50€'));
+$prodottoGioco3 = new Product('Laser', new Category('Gatti', '<i class="fa-solid fa-cat"></i>'), new Articolo('Gioco', './img/laser-gatto.jpg', '22.90€'));
+$prodottoGioco4 = new Product('Pallina da tennis', new Category('Cani', '<i class="fa-solid fa-dog"></i>'), new Articolo('Gioco', './img/pallina-cane.png', '4.00€'));
+$prodottoGioco5 = new Product('Corda', new Category('Cani', '<i class="fa-solid fa-dog"></i>'), new Articolo('Gioco', './img/corda-cane.jpg', '5.00€'));
+$prodottoGioco6 = new Product('Osso giocattolo', new Category('Cani', '<i class="fa-solid fa-dog"></i>'), new Articolo('Gioco', './img/osso-cane.jpg', '3.50€'));
+
+$prodottiGioco = [
+    $prodottoGioco1,
+    $prodottoGioco2,
+    $prodottoGioco3,
+    $prodottoGioco4,
+    $prodottoGioco5,
+    $prodottoGioco6,
 ];
+
+// prodotti cucce
+
+$prodottoCuccia1 = new Product('Cuccia Mucca', new Category('Gatti', '<i class="fa-solid fa-cat"></i>'), new Articolo('Cuccia', './img/cuccia-gatto-mucca.webp', '23.00€'));
+$prodottoCuccia2 = new Product('Cuccia Morbida', new Category('Gatti', '<i class="fa-solid fa-cat"></i>'), new Articolo('Cuccia', './img/cuccia-gatto-morbida.jpg', '19.50€'));
+$prodottoCuccia3 = new Product('Cuccia Tenda', new Category('Gatti', '<i class="fa-solid fa-cat"></i>'), new Articolo('Cuccia', './img/cuccia-gatto-tenda.jpg', '49.90€'));
+$prodottoCuccia4 = new Product('Cuccia in Legno', new Category('Cani', '<i class="fa-solid fa-dog"></i>'), new Articolo('Cuccia', './img/cuccia-cane-legno.webp', '149.90€'));
+$prodottoCuccia5 = new Product('Cuccia in Plastica', new Category('Cani', '<i class="fa-solid fa-dog"></i>'), new Articolo('Cuccia', './img/cuccia-cane-plastica.jpg', '60.00€'));
+$prodottoCuccia6 = new Product('Cuccia per interno', new Category('Cani', '<i class="fa-solid fa-dog"></i>'), new Articolo('Cuccia', './img/cuccia-cane-interno.jpg', '25.00€'));
+
+$prodottiCuccia = [
+    $prodottoCuccia1,
+    $prodottoCuccia2,
+    $prodottoCuccia3,
+    $prodottoCuccia4,
+    $prodottoCuccia5,
+    $prodottoCuccia6,
+];
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/36a89bf28f.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container mx-auto">
+
+        <h1 class="text-4xl text-center mb-8">Prodotti per Animali</h1>
+
+        <div class="container mx-auto p-2 mb-8">
+
+            <h3 class="text-3xl text-center mb-4 text-amber-800">Alimenti per Animali</h3>
+
+            <div class="flex flex-row flex-wrap gap-6 justify-center">
+                <?php foreach ($prodottiCibo as $cibo) {
+                ?>
+                    <div class="max-w-sm rounded overflow-hidden shadow-lg basis-1/3">
+                        <img style="height: 300px;" class="mx-auto w-full" src="<?php echo $cibo->articolo->getImmagine() ?>" alt="alimenti per animali">
+                        <div class="px-6 py-4 bg-emerald-700 text-white">
+                            <div class="font-bold text-xl mb-2"><?php echo $cibo->getNome() ?></div>
+                        </div>
+                        <div class="px-6 pt-4 pb-2 bg-emerald-700">
+                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-black mr-2 mb-2"><?php echo $cibo->articolo->getArticolo() ?></span>
+                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-black mr-2 mb-2"><?php echo $cibo->categoria->getIcona() ?></span>
+                            <span class="inline-block px-3 py-1 text-sm font-semibold text-white mr-2 mb-2"><?php echo $cibo->articolo->getPrezzo() ?></span>
+                        </div>
+                    </div>
+                <?php
+                } ?>
+            </div>
+        </div>
+
+        <div class="container mx-auto p-2 mb-8">
+
+            <h3 class="text-3xl text-center mb-4 text-amber-800">Giochi per Animali</h3>
+
+            <div class="flex flex-row flex-wrap gap-6 justify-center">
+                <?php foreach ($prodottiGioco as $gioco) {
+                ?>
+                    <div class="max-w-sm rounded overflow-hidden shadow-lg basis-1/3">
+                        <img style="height: 300px;" class="mx-auto w-full" src="<?php echo $gioco->articolo->getImmagine() ?>" alt="giochi per animali">
+                        <div class="px-6 py-4 bg-cyan-800 text-white">
+                            <div class="font-bold text-xl mb-2"><?php echo $gioco->getNome() ?></div>
+                        </div>
+                        <div class="px-6 pt-4 pb-2 bg-cyan-800">
+                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-black mr-2 mb-2"><?php echo $gioco->articolo->getArticolo() ?></span>
+                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-black mr-2 mb-2"><?php echo $gioco->categoria->getIcona() ?></span>
+                            <span class="inline-block px-3 py-1 text-sm font-semibold text-white mr-2 mb-2"><?php echo $gioco->articolo->getPrezzo() ?></span>
+                        </div>
+                    </div>
+                <?php
+                } ?>
+            </div>
+        </div>
+
+        <div class="container mx-auto p-2 mb-8">
+
+            <h3 class="text-3xl text-center mb-4 text-amber-800">Cucce per Animali</h3>
+
+            <div class="flex flex-row flex-wrap gap-6 justify-center">
+                <?php foreach ($prodottiCuccia as $cuccia) {
+                ?>
+                    <div class="max-w-sm rounded overflow-hidden shadow-lg basis-1/3">
+                        <img style="height: 300px;" class="mx-auto w-full" src="<?php echo $cuccia->articolo->getImmagine() ?>" alt="giochi per animali">
+                        <div class="px-6 py-4 bg-amber-950 text-white">
+                            <div class="font-bold text-xl mb-2"><?php echo $cuccia->getNome() ?></div>
+                        </div>
+                        <div class="px-6 pt-4 pb-2 bg-amber-950">
+                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-black mr-2 mb-2"><?php echo $cuccia->articolo->getArticolo() ?></span>
+                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-black mr-2 mb-2"><?php echo $cuccia->categoria->getIcona() ?></span>
+                            <span class="inline-block px-3 py-1 text-sm font-semibold text-white mr-2 mb-2"><?php echo $cuccia->articolo->getPrezzo() ?></span>
+                        </div>
+                    </div>
+                <?php
+                } ?>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
