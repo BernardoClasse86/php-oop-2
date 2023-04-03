@@ -23,6 +23,9 @@ class Category
 
     public function getIcona()
     {
+        if (empty($this->icona)) {
+            throw new Exception('Icona non trovata');
+        }
         return $this->icona;
     }
 }

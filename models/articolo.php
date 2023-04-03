@@ -19,6 +19,9 @@ class Articolo
 
     public function getArticolo()
     {
+        if (empty($this->tipo_articolo)) {
+            throw new Exception('tipo articolo sconosciuto');
+        }
         return $this->tipo_articolo;
     }
 

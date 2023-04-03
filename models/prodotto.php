@@ -1,6 +1,6 @@
 <?php
 
-include_once __DIR__ . '/categorie.php';
+include_once __DIR__ . '/categoria.php';
 include_once __DIR__ . '/articolo.php';
 
 class Product
