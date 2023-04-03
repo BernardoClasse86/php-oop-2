@@ -11,7 +11,7 @@ include_once __DIR__ . '/db/db.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/36a89bf28f.js" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Document</title>
+    <title>Online pet shop</title>
 </head>
 
 <body>

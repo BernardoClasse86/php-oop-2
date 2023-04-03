@@ -4,7 +4,7 @@ include_once __DIR__ . '/../models/products.php';
 // prodotti cibo
 
 $prodottoCibo1 = new Product('Paté morbido di pollo', new Category('Gatti', '<i class="fa-solid fa-cat"></i>', 'cucciolo'), new Articolo('Cibo', './img/umido-gatto-pollo.png', 0, 30));
-$prodottoCibo2 = new Product('Crocchette di manzo', new Category('Gatti', '<i class="fa-solid fa-cat"></i>', ''), new Articolo('Cibo', './img/crocchette-gatto-manzo.jpg', 3.30, 250));
+$prodottoCibo2 = new Product('Crocchette di manzo', new Category('Gatti', '<i class="fa-solid fa-cat"></i>', 'adulto'), new Articolo('Cibo', './img/crocchette-gatto-manzo.jpg', 3.30, 250));
 $prodottoCibo3 = new Product('Crocchette Bio di pollo', new Category('Gatti', '<i class="fa-solid fa-cat"></i>', 'adulto'), new Articolo('Cibo', './img/crocchette-gatto-bio-pollo.png', 5.75, 500));
 $prodottoCibo4 = new Product('Crocchette di agnello', new Category('Cani', '<i class="fa-solid fa-dog"></i>', 'adulto'), new Articolo('Cibo', './img/crocchette-cane-agnello.png', 4.50, 375));
 $prodottoCibo5 = new Product('Crocchette di pollo', new Category('Cani', '<i class="fa-solid fa-dog"></i>', 'cucciolo'), new Articolo('Cibo', './img/crocchette-cane-pollo.png', 3.50, 125));
